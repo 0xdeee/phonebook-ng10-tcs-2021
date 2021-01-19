@@ -10,10 +10,15 @@ import { Component, OnInit } from '@angular/core';
           <a class="nav-link" href="#">Back to Top</a>
         </li>
       </app-menu>
-      <p>Copyright 2021 - Arun</p>
+      <p class='copyright'>Copyright 2021 - Arun</p>
     </div>
   `,
   styles: [
+    `
+    .copyright{
+      color: green;
+    }
+    `
   ]
 })
 export class FooterComponent implements OnInit {
