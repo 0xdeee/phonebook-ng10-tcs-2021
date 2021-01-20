@@ -28,6 +28,11 @@ export class ConceptsComponent implements OnInit {
   // CEB related
   dataReceivedFromChild;
 
+  // structural directives releated
+  isAuth = true;
+
+  skillList: string[] = ['html', 'css', 'ts' ];
+
   constructor() { }
 
   ngOnInit(): void {

@@ -68,6 +68,48 @@
 
     <div class="tab-pane fade" id="directives-tab" role="tabpanel" aria-labelledby="directives-tab">
       <h2>Directives</h2>
+      <pre>
+        Directives
+        ----
+          Special Instructions to the DOM
+
+          1. Attribute Directives
+              routerLink, routerLinkActive, 
+
+          2. Structural Directives
+              Impact the structure of the page -- HTML
+              
+
+          3. Custom Attribute Directives
+
+          4. Custom Structural Directives
+      </pre>
+
+      <h3>Structural Directives</h3>
+
+      <h4>*ngIf</h4>
+      <div class="alert alert-success" *ngIf="isAuth; else NotAuthBox">
+        User is logged in...
+      </div>
+
+      <ng-template #NotAuthBox>
+        <div class="alert alert-danger">
+          Please log in...
+        </div>
+      </ng-template>
+
+      <h4>*ngFor</h4>
+      <ul>
+        <li *ngFor="let skill of skillList">{{skill}}</li> 
+      </ul>
+      <!-- todo: find index in *ngFor -->
+      <!-- todo: ngSwitch -->
+      
+      <h4>Custom Attribute Directive - colorizer (ng g d concepts/directives/colorizer) </h4>
+
+      <div appColorizer>
+        Testing
+      </div>
 
     </div>
 
