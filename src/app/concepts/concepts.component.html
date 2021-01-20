@@ -1,1 +1,49 @@
-<p>concepts works!</p>
+<div class="container-fluid">
+
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" data-toggle="tab" href="#basic-databinding" role="tab"
+        aria-controls="basic-databinding" aria-selected="true">Basic Data Binding</a>
+      <a class="nav-item nav-link" data-toggle="tab" href="#cpb-tab" role="tab" aria-controls="cpb-tab"
+        aria-selected="false">Custom Prop Binding</a>
+      <a class="nav-item nav-link" data-toggle="tab" href="#ceb-tab" role="tab" aria-controls="ceb-tab"
+        aria-selected="false">Child to Parent Comp Communication</a>
+      <a class="nav-item nav-link" data-toggle="tab" href="#directives-tab" role="tab" aria-controls="directives-tab"
+        aria-selected="false">Directives</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+
+    <div class="tab-pane fade show active" id="basic-databinding" role="tabpanel"
+      aria-labelledby="basic-databinding-tab">
+      <h2>Basic Data Binding</h2>
+      <h3>1. String Interpolation</h3>
+      <p>App name is: {{ appName }}</p>
+      <p>Total developers : {{ totalDevelopers }}</p>
+      <div title="{{appName}}">Mouseover here to see tooltip</div>
+      <input type="text" value="{{appName}}">
+
+      <hr>
+      <h3>2. Property Binding</h3>
+      <div [title]="companyName">Mouseover to see the company name...</div>
+      <input type="text" [value]="companyName">
+      <!-- todo: try ngClass, ngStyle -->
+      <hr>
+    </div>
+
+    <div class="tab-pane fade" id="cpb-tab" role="tabpanel" aria-labelledby="cpb-tab-tab">
+      <h2>Custom Property Binding -- Parent to Child Comp Communication</h2>
+
+    </div>
+
+    <div class="tab-pane fade" id="ceb-tab" role="tabpanel" aria-labelledby="ceb-tab-tab">
+      <h2>Child to Parent Comp Communication</h2>
+    </div>
+
+    <div class="tab-pane fade" id="directives-tab" role="tabpanel" aria-labelledby="directives-tab">
+      <h2>Directives</h2>
+
+    </div>
+
+  </div>
+</div>
