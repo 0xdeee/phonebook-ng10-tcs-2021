@@ -1,5 +1,6 @@
 <div class="container-fluid">
 
+  <p>Data Received from Child Comp: {{dataReceivedFromChild}}</p>
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
       <a class="nav-item nav-link active" data-toggle="tab" href="#basic-databinding" role="tab"
@@ -61,6 +62,8 @@
 
     <div class="tab-pane fade" id="ceb-tab" role="tabpanel" aria-labelledby="ceb-tab-tab">
       <h2>Child to Parent Comp Communication</h2>
+      <!-- Step 4 of CEB: Let's handle the emitted event in concepts.comp.html -->
+      <app-ceb (loadedProfile)="loadedProfileHandler($event)"></app-ceb>
     </div>
 
     <div class="tab-pane fade" id="directives-tab" role="tabpanel" aria-labelledby="directives-tab">
