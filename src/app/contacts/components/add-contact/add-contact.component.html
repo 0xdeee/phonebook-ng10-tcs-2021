@@ -51,7 +51,7 @@
       <div class="form-group row">
         <div class="col-sm-10 offset-sm-2">
           <!-- todo: disable the button if the form is invalid -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary" [disabled]="addContactForm.invalid">Submit</button>
         </div>
       </div>
     </form>
