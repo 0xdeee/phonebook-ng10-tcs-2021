@@ -6,13 +6,14 @@
 
     </div>
     <!-- step3 patch up html form with the ts using [formGroup]-->
-    <form class="col-md-6 offset-md-3">
+    <form class="col-md-6 offset-md-3" [formGroup]="addContactForm" (ngSubmit)="addContactHandler()">
       <div class="form-group row">
         <label for="staticName" class="col-sm-2 col-form-label">Name</label>
         <div class="col-sm-10">
            <!-- Step4: connect the formControl in form fields-->
           <input type="text" class="form-control" 
-          placeholder="Enter Name"  
+          [ngClass]="{ 'is-invalid': addContactForm.get('name').touched && addContactForm.get('name').invalid  }"
+          placeholder="Enter Name" formControlName="name"
           />
           <!-- refer TS for step 5 -->
           <div class="invalid-feedback">
@@ -23,7 +24,8 @@
       <div class="form-group row">
         <label for="staticPhone" class="col-sm-2 col-form-label">Phone</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Enter Phone" />
+          <input type="text" class="form-control" placeholder="Enter Phone" formControlName="phone"
+          [ngClass]="{ 'is-invalid': addContactForm.get('phone').touched && addContactForm.get('phone').invalid  }"/>
           <div class="invalid-feedback">
             <div>Phone is required</div>
           </div>
@@ -32,11 +34,12 @@
       <div class="form-group row">
         <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" 
+          <input type="email" class="form-control" formControlName="email" 
+          [ngClass]="{ 'is-invalid': addContactForm.get('email').touched && addContactForm.get('email').invalid  }"
           placeholder="Enter Email" />
           <div class="invalid-feedback">
-            <div>Email is required</div>
-            <div>Email seems to be not valid</div>
+            <div *ngIf="addContactForm.get('email').errors?.required">Email is required</div>
+            <div *ngIf="addContactForm.get('email').errors?.email">Email seems to be not valid</div>
           </div>
         </div>
       </div>
