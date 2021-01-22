@@ -38,6 +38,7 @@ export class ContactService {
     return this.http.get(this.REST_API_URL)
       .pipe(map((res: any) => {  // 3. get the resp from REST API
         console.log(res);
+        // sort, filter, remove, add, manipulate, convert to json
         return res; // 4. send it back to the comp ts
       }));
   }
@@ -51,6 +52,6 @@ export class ContactService {
       }));
   }
 
-  
+
 
 }
