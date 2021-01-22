@@ -52,6 +52,30 @@ export class ContactService {
       }));
   }
 
+  updateContact(contactData: any) {
 
+    console.log(contactData);
+
+    const updateContact: any = new Promise((resolve, reject) => {
+
+      this.http.put(this.REST_API_URL + contactData.id, contactData)
+        .toPromise()
+        .then((res: any) => {
+          console.log(res);
+          resolve(res);
+        })
+        .catch((err: any) => {
+          console.log('Error occured');
+          console.log(err);
+          reject(err);
+        })
+        .finally(() => {
+          console.log('Into Finally');
+        });
+
+    });
+
+    return updateContact;
+  }
 
 }

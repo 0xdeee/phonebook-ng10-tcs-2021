@@ -22,20 +22,27 @@ export class ContactDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactService.getContactById(this.contactId)
-      .subscribe( (res: any) => {
+      .subscribe((res: any) => {
         console.log(res);
         this.contactData = res;
       });
   }
 
-  editModalOpen(){
+  editModalOpen() {
     this.duplicateContactData = {
       ...this.contactData
     };
   }
 
-  updateContactHandler(){
+  async updateContactHandler() {
     console.log(this.duplicateContactData);
+
+    const status = await this.contactService.updateContact(this.duplicateContactData);
+    console.log(status);
+    if (status && status.id) {
+      this.isUpdated = true;
+    }
+
   }
 
 }
