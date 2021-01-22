@@ -1,1 +1,19 @@
-<p>about works!</p>
+<div class="container">
+  <h1>Pipes</h1>
+
+  <p>{{today}}</p>
+  <p>{{today | date }}</p>
+  <p>{{today | date: 'dd/MMM/yyyy' }}</p>
+  <p>{{today | date: 'dd/MMM/yyyy hh:mm:ss a' }}</p>
+  
+  <hr>
+  <p>{{dummyText}}</p>
+  <p>{{dummyText | uppercase }}</p>
+
+  <hr >
+  <p>Custom Pipes</p>
+  <p>{{dummyText}}</p>
+  <p>{{dummyText | ellipis}}</p>
+  <p>{{dummyText | ellipis: 20}}</p>
+
+</div>
